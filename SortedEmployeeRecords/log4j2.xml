@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug" name="SortedEmployeeRecords" packages=""  monitorInterval="60">
+<Properties>
+    <Property name="baseDir">logs</Property>
+  </Properties>
+  <Appenders>
+    
+    <!-- Rolling File Appender -->
+    <RollingFile name="RollingFile" append="false">
+      <FileName>logs/app_${date:yyyyMMdd_HH_mm_ss}.log</FileName>
+      <FilePattern>logs/backup/%d{yyyy-MM-dd}.log.zip</FilePattern>
+      <PatternLayout>
+        <Pattern>%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      </Policies>
+      <DefaultRolloverStrategy max="16" />
+    </RollingFile>
+    
+    
+     <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %p (%c{1.}:%L) - %m%n" />
+        </Console>
+  </Appenders>
+   <Loggers>
+        <Root level="debug" additivity="false">
+            <!--appender-ref ref="fileLogger" /-->
+            <appender-ref ref="RollingFile" />
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
