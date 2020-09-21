@@ -15,7 +15,7 @@ Java 14+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [Spring Boot](https://spring.io/) - Java boot strap framework
+* [Spring Boot](https://spring.io/) - Java micro services framework
 
 ## Authors
 
