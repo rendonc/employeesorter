@@ -34,7 +34,6 @@ public class EmployeeFileParser {
 		try {
 			br = new BufferedReader(new FileReader(in, charset));
 
-			// skip first line because we already read it to know the format type
 			String line = br.readLine().trim();
 
 			if (line == null || line.isEmpty()) {
