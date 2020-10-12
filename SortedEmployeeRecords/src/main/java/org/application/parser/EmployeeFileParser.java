@@ -52,7 +52,7 @@ public class EmployeeFileParser {
 
 			while ((line = br.readLine()) != null) {
 				try {
-					// Employee e = parseEmployeeRecord(line);
+					
 					Employee e = parser.parseEmployeeRecord(line);
 					if (e != null) {
 						list.add(e);
